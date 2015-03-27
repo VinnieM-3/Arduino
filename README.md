@@ -5,3 +5,5 @@ ArduinoISP_NoP.ino - This sketch is a modified version of the standard ArduinoIS
 ADC_SingleConversion.ino - This sketch demonstrates a single ADC conversion by setting Atmega328 registers directly.
 
 ADC_FreeRunning.ino - This sketch demonstrates running the ADC in Free Running mode by setting the Atmega328 registers directly.
+
+ADC_NoiseReduction.ino - This sketch demonstrates the ADC Noise Reduction mode by setting the Atmega328 registers directly.
