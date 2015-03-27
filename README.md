@@ -7,3 +7,5 @@ ADC_SingleConversion.ino - This sketch demonstrates a single ADC conversion by s
 ADC_FreeRunning.ino - This sketch demonstrates running the ADC in Free Running mode by setting the Atmega328 registers directly.
 
 ADC_NoiseReduction.ino - This sketch demonstrates the ADC Noise Reduction mode by setting the Atmega328 registers directly.
+
+ADC_Frequency.ino - This sketch demonstrates how to adjust ADC speed and also demonstrates the effect of speed on conversion accuracy.
