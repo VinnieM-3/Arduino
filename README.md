@@ -9,3 +9,6 @@ ADC_FreeRunning.ino - This sketch demonstrates running the ADC in Free Running m
 ADC_NoiseReduction.ino - This sketch demonstrates the ADC Noise Reduction mode by setting the Atmega328 registers directly.
 
 ADC_Frequency.ino - This sketch demonstrates how to adjust ADC speed and also demonstrates the effect of speed on conversion accuracy.
+
+PWM_Fast_Mode.ino - This sketch demonstrates Fast PWM Mode, 10-bit resolution, 1024 steps, on Arduino pins 9 and 10
+Arduino pin 9 will increase in ~1/2v (10% duty cycle) increments and pin 10 will decrease.
