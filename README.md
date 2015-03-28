@@ -15,3 +15,5 @@ PWM_Fast_Mode.ino - This sketch demonstrates Fast PWM Mode, 10-bit resolution, 1
 TIMER_4secIntr.ino - This sketch demonstrates Timer1 (Atmega328's 16bit timer).  Timer1 can trigger an interrupt every ~4sec or less. The LED tied to Arduino pin 13 will toggle each time the interrupt is triggered (~4sec).
 
 WDT_Simple.ino - This sketch demonstrates the Watchdog Timer in both Interrupt Mode and System Reset Mode.
+
+ReadDigitalViaRegister.ino - This sketch demonstrates reading a digital input using registers.
