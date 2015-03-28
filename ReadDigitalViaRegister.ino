@@ -13,8 +13,8 @@
 void setup() {
   
   // Set Arduino pin 7 as an input and turn on the pullup resistor.
-  cbi(DDRD, DDD7); //pin 7 is an input
-  sbi(PORTD,PORTD7); //pull up turned on
+  cbi(DDRD, DDD7); // pin 7 is an input
+  sbi(PORTD,PORTD7); // pullup turned on
   
   // Set Arduino pin 13 as an output
   sbi(DDRB, DDB5);  
