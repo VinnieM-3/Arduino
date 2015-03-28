@@ -13,4 +13,4 @@ ADC_Frequency.ino - This sketch demonstrates how to adjust ADC speed and also de
 PWM_Fast_Mode.ino - This sketch demonstrates Fast PWM Mode, 10-bit resolution, 1024 steps, on Arduino pins 9 and 10
 Arduino pin 9 will increase in ~1/2v (10% duty cycle) increments and pin 10 will decrease.
 
-Timer_4secIntr.ino - This sketch demonstrates Timer1 (Atmega328's 16bit timer).  Timer1 can trigger an interrupt every ~4sec or less. The LED tied to Arduino pin 13 will toggle each time the interrupt is triggered (~4sec).
+TIMER_4secIntr.ino - This sketch demonstrates Timer1 (Atmega328's 16bit timer).  Timer1 can trigger an interrupt every ~4sec or less. The LED tied to Arduino pin 13 will toggle each time the interrupt is triggered (~4sec).
