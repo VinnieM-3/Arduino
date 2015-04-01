@@ -17,3 +17,5 @@ TIMER_4secIntr.ino - This sketch demonstrates Timer1 (Atmega328's 16bit timer). 
 WDT_Simple.ino - This sketch demonstrates the Watchdog Timer in both Interrupt Mode and System Reset Mode.
 
 ReadDigitalViaRegister.ino - This sketch demonstrates reading a digital input using registers.
+
+PWM_Modes.ino - This sketch demonstrates some of the AtMega328's PWM modes.  It can be used to study the differences between Fast, Phase Correct, and Phase/Frequency Correct PWM Modes, but an oscilloscope is essential.
