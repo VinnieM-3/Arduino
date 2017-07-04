@@ -1,48 +1,51 @@
-// This sketch demonstrates a timer using Atmega328's 16bit, Timer1.  
-// Timer1 can trigger an interrupt every ~4sec or less
-// The LED tied to Arduino pin 13 will toggle every time the 
-// interrupt is triggered.
-
-#ifndef cbi
-#define cbi(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
-#endif
-#ifndef sbi
-#define sbi(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
-#endif 
+/* This sketch demonstrates a timer using Atmega328's 16bit, Timer1.
+ * Timer1 can trigger an interrupt every ~4sec or less 
+ * The LED tied to Arduino pin 13 will toggle every time the 
+ * interrupt is triggered.
+ */
 
 void setup(){
   
-  // Set Arduino pin 13 as an output.
-  sbi(DDRB, DDD5);
+  // Set builtin LED as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
   
-  // Disable interrupts globally (I-flag)
+  // Disable interrupts globally
   cli();
 
   // Set Timer1 to normal operation mode, OC1A/OC1B disconnected.
   TCCR1A = 0;
   
-  // Set Clear-Timer-on-Compare-Match (CTC) Mode
-  // and set prescaler to 1024.
-  TCCR1B = 0;
-  sbi(TCCR1B,WGM12);
-  sbi(TCCR1B,CS12);
-  sbi(TCCR1B,CS10);
-  
-  // Clear Counter
-  TCNT1  = 0;
-  
-  // Set Top value to max
-  OCR1A = 65535;//(1024*(1+65535))/16M = 4.194sec
 
+  /* Set Clear-Timer-on-Compare-Match (CTC) Mode (WGM12) and 
+   * prescaler (CS12-CS10) to 1024 so  we can set max time interval.
+   * 
+   * CS12  CS11  CS10  Description
+   *  0     0     1    No prescaling
+   *  0     1     0    clk/8
+   *  0     1     1    clk/64
+   *  1     0     0    clk/256
+   *  1     0     1    clk/1024
+   */
+  TCCR1B = (1<<WGM12) | (1<<CS12) | (1<<CS10);  // up to 4.194secs
+  //TCCR1B = (1<<WGM12) | (1<<CS12);            // up to 1.049secs
+  
+
+  // Set Top value to maximum value for a 16bit register
+  OCR1A = 65535; // (1024*(1+65535))/16MHz = 4.194sec
+  
+  // Reset counter.  When counter matches OCR1A interrupt will trigger 
+  TCNT1 = 0;
+  
   // Enable timer interrupt
-  sbi(TIMSK1,OCIE1A);
+  TIMSK1 |= (1<<OCIE1A);
 
   // Enable interrupts globally
   sei();
 }
 
 ISR(TIMER1_COMPA_vect){
-  PORTB ^= 32;
+  // Toggle builtin LED pin which is PIN5 on PORTB by XOR'ing.
+  PORTB ^= (1<<PINB5);
 }
 
 void loop(){
