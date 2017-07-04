@@ -12,7 +12,7 @@ void setup() {
   
   // Set Arduino pin 13 as an output
   //DDRB |= (1<<DDB5);
-  pinMode(LED_BUILTIN, OUTPUT); // or set pin 13 the using the Arduino function
+  pinMode(LED_BUILTIN, OUTPUT); // or set pin 13 using the Arduino function
 }
 
 void loop() {  
