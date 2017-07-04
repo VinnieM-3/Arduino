@@ -1,4 +1,4 @@
-# Arduino example sketches demonstrating ADC Single Conversion, ADC in Free Running mode, ADC with Noise Reduction, ADC with Frequency tuning, PWM in Fast mode, Other PWM modes, 16bit Timer1 example, and a Watchdog example using an interrupt and/or system reset.  
+Arduino example sketches demonstrating ADC Single Conversion, ADC in Free Running mode, ADC with Noise Reduction, ADC with Frequency tuning, PWM in Fast mode, Other PWM modes, 16bit Timer1 example, and a Watchdog example using an interrupt and/or system reset.  
 
 The GitHub Project Page is [here](http://vinniem-3.github.io/Arduino/).
 
