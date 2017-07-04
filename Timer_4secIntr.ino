@@ -44,8 +44,7 @@ void setup(){
 }
 
 ISR(TIMER1_COMPA_vect){
-  // Toggle builtin LED pin which is PIN5 on PORTB by XOR'ing.
-  PORTB ^= (1<<PINB5);
+  PINB |= (1<<PINB5); // Toggle builtin LED pin
 }
 
 void loop(){
